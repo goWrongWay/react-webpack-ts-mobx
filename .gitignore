@@ -1,0 +1,15 @@
+node_modules/*
+dist/*
+dist/js/*
+dist/img/*
+dist/css/
+npm-debug.log
+.idea/*
+.DS_Store
+.flowconfig
+*.iml
+*.log
+.dockerignore
+.kube
+.idea
+.med/*
