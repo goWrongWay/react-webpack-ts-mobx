@@ -1,6 +1,11 @@
 import * as React from "react";
+import {RouteComponentProps} from "react-router"
 import * as ReactDOM from "react-dom";
 import * as Loadable from 'react-loadable';
+
+// import {observable} from 'mobx';
+import {observer, inject} from 'mobx-react';
+
 import {
     BrowserRouter as Router,
     Route,
@@ -10,20 +15,31 @@ import {
 export interface HelloProps {
     compiler: string;
     framework: string;
+    counter?: any
 }
+
+
 
 // 'HelloProps' describes the shape of props.
 // State is never set so we use the '{}' type.
+
+@inject("counter") @observer
 class Hello extends React.Component<HelloProps, {}> {
     render() {
+        console.log(this.props.counter);
         return <div>
-            <h1>Hello from {this.props.compiler} and {this.props.framework}!</h1>;
-
+            <h1>Hello from {this.props.compiler} and12111 {this.props.framework}!</h1>
+            <p>
+                {this.props.counter.counter}
+            </p>
+            <button onClick={this.props.counter.addCounter}>点我加1</button>
+            <button onClick={this.props.counter.addCounterAsync}>异步加一</button>
+            <button onClick={this.props.counter.getInfo}>异步请求</button>
             <Router>
                 <div>
                     <ul>
                         <li>
-                            <Link to="/">Home</Link>
+                            <Link to="/">Home1</Link>
                         </li>
                         <li>
                             <Link to="/about">About</Link>
