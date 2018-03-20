@@ -1,0 +1,73 @@
+{
+  "menu": {
+    "status": 200,
+    "msg": "导航数据传递成功",
+    "data": [
+      {
+        "type": "header",
+        "title": "伽利略平台",
+        "data": [
+          {
+            "type": "user"
+          }
+        ]
+      },
+      {
+        "type": "menu",
+        "direction": "row",
+        "data": [
+          {
+            "title": "BI系统运营管理",
+            "key": "business_management",
+            "icon": "contacts",
+            "item": [
+              {
+                "title": "顶部通知管理",
+                "key": "notice",
+                "url": "http://api.bi.guazi-corp.com/api/mgmt/notice",
+                "type": "table"
+              }
+            ]
+          },
+          {
+            "title": "BI数据管理",
+            "key": "data_management",
+            "icon": "dot-chart",
+            "item": [
+              {
+                "title": "报表管理",
+                "key": "dashboard",
+                "url": "http://api.bi.guazi-corp.com/api/mgmt/dashboard",
+                "type": "table"
+              },
+              {
+                "title": "指标管理",
+                "key": "indicator",
+                "url": "http://api.bi.guazi-corp.com/api/mgmt/indicator",
+                "type": "table"
+              },
+              {
+                "title": "业务线管理",
+                "key": "category",
+                "url": "http://api.bi.guazi-corp.com/api/mgmt/category",
+                "type": "table"
+              },
+              {
+                "title": "库表管理",
+                "key": "database",
+                "url": "http://api.bi.guazi-corp.com/api/mgmt/database",
+                "type": "table"
+              },
+              {
+                "title": "标签分类管理",
+                "key": "tagCategory",
+                "url": "http://api.bi.guazi-corp.com/api/mgmt/tagCategory",
+                "type": "table"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

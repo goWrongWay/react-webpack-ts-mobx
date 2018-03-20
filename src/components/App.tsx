@@ -6,16 +6,23 @@ import * as Loadable from 'react-loadable';
 // import {observable} from 'mobx';
 import {observer, inject} from 'mobx-react';
 
+import Button from 'antd/lib/button'
+import Menu from 'antd/lib/Menu';
+
+const SubMenu = Menu.SubMenu;
+const MenuItemGroup = Menu.ItemGroup;
+
 import {
     BrowserRouter as Router,
     Route,
     Link
 } from 'react-router-dom'
 
-export interface HelloProps {
+export interface AppProps {
     compiler: string;
     framework: string;
-    counter?: any
+    counter?: any;
+    menu?: any
 }
 
 
@@ -23,18 +30,31 @@ export interface HelloProps {
 // 'HelloProps' describes the shape of props.
 // State is never set so we use the '{}' type.
 
-@inject("counter") @observer
-class Hello extends React.Component<HelloProps, {}> {
+@inject("counter", "menu") @observer
+class App extends React.Component<AppProps, {}> {
     render() {
-        console.log(this.props.counter);
         return <div>
+            <Menu>
+                {
+                    this.props.menu.menuList.length && this.props.menu.menuList.map((v : any, i: number) => {
+                        return <MenuItemGroup key={i} title={v.title}>
+                            {
+                                v.item ?
+                                    v.item.map((inner: any, num: number) => {
+                                        return <Menu.Item key={num}>{inner.title}</Menu.Item>
+                                    }) : null
+                            }
+                        </MenuItemGroup>
+                    })
+                }
+            </Menu>
             <h1>Hello from {this.props.compiler} and12111 {this.props.framework}!</h1>
             <p>
                 {this.props.counter.counter}
             </p>
-            <button onClick={this.props.counter.addCounter}>点我加1</button>
-            <button onClick={this.props.counter.addCounterAsync}>异步加一</button>
-            <button onClick={this.props.counter.getInfo}>异步请求</button>
+            <Button onClick={this.props.counter.addCounter}>点我加1</Button>
+            <Button onClick={this.props.counter.addCounterAsync}>异步加一</Button>
+            <Button onClick={this.props.menu.getMenuList}>异步请求</Button>
             <Router>
                 <div>
                     <ul>
@@ -105,4 +125,4 @@ const Topic = (props: match) => (
 
 
 
-export default Hello;
+export default App;
