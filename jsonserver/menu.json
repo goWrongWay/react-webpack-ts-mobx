@@ -24,7 +24,7 @@
               {
                 "title": "顶部通知管理",
                 "key": "notice",
-                "url": "http://api.bi.guazi-corp.com/api/mgmt/notice",
+                "url": "http://api.bi.shabigongsi.com/api/mgmt/notice",
                 "type": "table"
               }
             ]
@@ -37,31 +37,31 @@
               {
                 "title": "报表管理",
                 "key": "dashboard",
-                "url": "http://api.bi.guazi-corp.com/api/mgmt/dashboard",
+                "url": "http://api.bi.shabigongsi.com/api/mgmt/dashboard",
                 "type": "table"
               },
               {
                 "title": "指标管理",
                 "key": "indicator",
-                "url": "http://api.bi.guazi-corp.com/api/mgmt/indicator",
+                "url": "http://api.bi.shabigongsi.com/api/mgmt/indicator",
                 "type": "table"
               },
               {
                 "title": "业务线管理",
                 "key": "category",
-                "url": "http://api.bi.guazi-corp.com/api/mgmt/category",
+                "url": "http://api.bi.shabigongsi.com/api/mgmt/category",
                 "type": "table"
               },
               {
                 "title": "库表管理",
                 "key": "database",
-                "url": "http://api.bi.guazi-corp.com/api/mgmt/database",
+                "url": "http://api.bi.shabigongsi.com/api/mgmt/database",
                 "type": "table"
               },
               {
                 "title": "标签分类管理",
                 "key": "tagCategory",
-                "url": "http://api.bi.guazi-corp.com/api/mgmt/tagCategory",
+                "url": "http://api.bi.shabigongsi.com/api/mgmt/tagCategory",
                 "type": "table"
               }
             ]
